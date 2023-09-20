@@ -1,0 +1,17 @@
+--------------------------------------------------------------------------------
+select auteur.NOM_AUTEUR
+from livre,auteur,ecrit
+where ((auteur.NUM_AUTEUR)=(ecrit.NUM_AUTEUR)) and ((livre.CODE_ISBN)=(ecrit.CODE_ISBN)) and ((livre.titre_livre)='antigone');
+--------------------------------------------------------------------------------
+select utilisateur.CTG, count(utilisateur.CTG) as nombre_de_clients
+from utilisateur group by utilisateur.ctg;
+---------------------------------------------------------------------------------
+select num_ordre from exemplaire
+where (((nombre_exemplaire)>(select avg(exemplaire1.NOMBRE_EXEMPLAIRE)from exemplaire as exemplaire1)));
+---------------------------------------------------------------------------------
+select num_ordre ,date_achat,etat,nombre_exemplaire FROM exemplaire 
+where ((nombre_exemplaire>'10'));
+---------------------------------------------------------------------------------
+select document.TITRE_DOC
+from document, exemplaire
+where (exemplaire.ID_DOC = document.ID_DOC) and (exemplaire.STATUT = 'en travaux');
