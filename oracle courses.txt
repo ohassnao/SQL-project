@@ -1,0 +1,6 @@
+========== Oracle cloud databases administration ===========================
+chapter autonomous Database Tools:
+-Data load
+-Data prep
+-Data modeling
+-Data analysis  
